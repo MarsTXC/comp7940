@@ -35,6 +35,7 @@ def main():
     
 	# on different commands - answer in Telegram
     dispatcher.add_handler(CommandHandler("add", add)) 
+    dispatcher.add_handler(CommandHandler("hello",hello_command))
     dispatcher.add_handler(CommandHandler("help", help_command))
 
     # To start the bot:
@@ -58,6 +59,19 @@ def equiped_chatgpt(update, context):
 def help_command(update: Update, context: CallbackContext) -> None:
 	"""Send a message when the command /help is issued.""" 
 	update.message.reply_text('Helping you helping you.')
+
+def hello_command(update: Update, context: CallbackContext) -> None:
+    """Send a message when the command /hello is issued."""
+    try:
+        global redis1
+        logging.info(context.args[0])
+        msg_type = ' '.join(context.args)  # Join all arguments to form the keyword
+        update.message.reply_text('Good day, ' + msg_type + '!')
+    except IndexError:
+        update.message.reply_text('Usage: /hello <keyword>')
+
+
+
 def add(update: Update, context: CallbackContext) -> None: 
     """Send a message when the command /add is issued.""" 
     try:
