@@ -77,7 +77,7 @@ def add(update: Update, context: CallbackContext) -> None:
     try:
         global redis1
         logging.info(context.args[0]) 
-        msg = context.args[0] # /add keyword <-- this should store the keyword redis1.incr(msg)
+        msg = ' '.join(context.args) # /add keyword <-- this should store the keyword redis1.incr(msg)
         redis1.incr(msg)
         update.message.reply_text('You have said ' + msg + ' for ' + 
                             redis1.get(msg).decode('UTF-8') + ' times.')
