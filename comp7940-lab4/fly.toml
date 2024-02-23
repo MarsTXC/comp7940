@@ -12,17 +12,17 @@ primary_region = 'hkg'
 [env]
   PORT = '8080'
 
-[[service]]
+[[services]]
   internal_port = 8000
   protocol = "tcp"
 
-  [service.concurrency]
+  [services.concurrency]
     hard_limit = 25
     soft_limit = 20
     type = "connections"
   
   [[services.ports]]
-    handlers = ["http]
+    handlers = ["http"]
     port = 80
 
   [[services.ports]]
