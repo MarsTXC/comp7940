@@ -2,7 +2,7 @@
 ## chatbot.py
 from telegram import Update
 from telegram.ext import (Updater, MessageHandler, CommandHandler, CallbackContext)
-from telegram.ext import Filters
+#from telegram.ext import Filters
 
 # The messageHandler is used for all message updates
 import configparser
