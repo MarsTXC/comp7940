@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for marstan on 2024-02-27T20:40:02+08:00
+# fly.toml app configuration file generated for marstan on 2024-02-27T21:09:26+08:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -11,7 +11,7 @@ primary_region = 'hkg'
 
 [env]
   PORT = '8080'
-  
+
 [[services]]
   internal_port = 8000 
   protocol = "tcp"
