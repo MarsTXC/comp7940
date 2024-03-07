@@ -1,6 +1,5 @@
 from telegram import Update
-from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, 
-                          CallbackContext)
+from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, CallbackContext)
 import configparser
 import logging
 import redis
