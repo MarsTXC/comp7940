@@ -2,8 +2,9 @@ from telegram import Update
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, CallbackContext)
 import configparser
 import logging
-import redis
-from ChatGPT_HKBU import HKBU_ChatGPT
+#import redis
+from ChatGPT_HKBU import HKBU_ChatGPT
+
 #global redis1
 global chatgpt
 def main():
@@ -26,7 +27,8 @@ def main():
     global chatgpt
     chatgpt = HKBU_ChatGPT(config)
     chatgpt_handler = MessageHandler(Filters.text & (~Filters.command), equiped_chatgpt)
-    dispatcher.add_handler(chatgpt_handler)
+    dispatcher.add_handler(chatgpt_handler)
+
     # 注册错误处理程序
     dispatcher.add_error_handler(error_handler)
 
@@ -82,4 +84,4 @@ def error_handler(update, context):
 
 
 if __name__ == '__main__':
-    main()
+    main()
