@@ -12,6 +12,6 @@ jobs:
     # change to main if needed
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: /Users/marstan/.fly/bin/flyctl deploy --remote-only
+      - run: fly deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
